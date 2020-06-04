@@ -1,0 +1,20 @@
+ul {
+  list-style: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid gray;
+}
+
+// ul{
+//   &:nth-of-type(-n+4){
+//     grid-column: 1;
+//   }
+//   &:nth-of-type(n+5){
+//     grid-column: 2;
+
+//   }
+//   &:nth-of-type(n+9){
+//     grid-column: 3;
+//     align-items: start;
+//   }
+
+// }

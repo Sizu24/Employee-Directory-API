@@ -1,0 +1,27 @@
+.grid-container{
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main";
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr;
+  grid-auto-rows: 1fr;
+}
+
+header{
+  grid-area: header;
+}
+main{
+  margin: 0 50px;
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 20px;
+  @include mq($md){
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 40px;
+  }
+}
+
+

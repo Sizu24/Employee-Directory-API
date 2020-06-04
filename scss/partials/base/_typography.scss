@@ -1,0 +1,11 @@
+.title{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  @include mq($md){
+    text-align: left;
+    padding: 25px;
+  }
+}

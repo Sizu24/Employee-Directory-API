@@ -13,11 +13,19 @@
 }
 
 img {
-  margin-top: 10px;
+  float: left;
+  margin: 20px 0 20px 15px;
   border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .grid-container {
+  background-color: rgba(245, 245, 245, 0.5);
   display: grid;
   grid-template-areas: "header" "main";
   grid-template-columns: 1fr;
@@ -45,9 +53,29 @@ main {
 }
 
 ul {
-  list-style: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #fff;
+  list-style: none;
   border: 1px solid gray;
+  border-radius: 5px;
+  padding-left: 20px;
+  display: inline-block;
+}
+
+li p {
+  font-size: 0.8em;
+  float: left;
+  padding-left: 20px;
+  padding-right: 25px;
+  margin: 0;
+  color: #acacac;
+}
+li h2 {
+  float: left;
+  margin: 0;
+  padding-top: 40px;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  font-size: 1.1em;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -20,7 +20,7 @@ function getProfiles(url){
 
 let getArray = (info)=>{
   let names = [];
-  names.push(`<img src=${info.picture.thumbnail} alt="profile-pic">`);
+  names.push(`<img src=${info.picture.large} alt="profile-pic">`);
   names.push(`<h2>${info.name.first} ${info.name.last}</h2>`);
   names.push(`<p>${info.email}</p>`);
   names.push(`<p>${info.location.city}</p>`);

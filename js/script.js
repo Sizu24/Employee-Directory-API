@@ -27,6 +27,8 @@ let getArray = (info)=>{
   return names;
 }
 
+// if info.email.length > 26, p.style.paddingRight = "10px";
+
 let display = (array)=>{
   let list = document.createElement('ul');
   let listItem = "";

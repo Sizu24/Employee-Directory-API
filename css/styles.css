@@ -13,8 +13,7 @@
 }
 
 img {
-  float: left;
-  margin: 20px 0 20px 15px;
+  margin: 20px 0 20px 5px;
   border-radius: 50%;
   height: 100px;
   width: 100px;
@@ -55,26 +54,24 @@ main {
 ul {
   background-color: #fff;
   list-style: none;
-  border: 1px solid gray;
+  border: 1px solid #d8d8d8;
   border-radius: 5px;
   padding-left: 20px;
-  display: inline-block;
+  display: block;
 }
 
+li {
+  float: left;
+}
 li p {
   font-size: 0.8em;
-  float: left;
-  padding-left: 20px;
-  padding-right: 25px;
+  padding: 0 25px 5px 20px;
   margin: 0;
   color: #acacac;
 }
 li h2 {
-  float: left;
   margin: 0;
-  padding-top: 40px;
-  padding-left: 20px;
-  padding-bottom: 5px;
+  padding: 40px 0 5px 20px;
   font-size: 1.1em;
 }
 

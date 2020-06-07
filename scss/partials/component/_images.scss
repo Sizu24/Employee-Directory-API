@@ -9,10 +9,6 @@ main img{
   @include mq($lg){
     height: 85px;
   }
-  // @include mq($lg){
-  //   height: 100px;
-  //   width: 100px;
-  // }
 }
 .modal img {
   border-radius: 50%;

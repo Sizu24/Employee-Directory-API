@@ -2,13 +2,15 @@ body{
   font-family: 'Open Sans', sans-serif;
 }
 .title{
-  font-size: 0.8em;
+  font-size: 0.5em;
+  padding: 15px 0;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   @include mq($md){
+    font-size: 0.8em;
     text-align: left;
-    padding-left: 50px;
+    padding-left: 15px;
   }
 }
 h2{

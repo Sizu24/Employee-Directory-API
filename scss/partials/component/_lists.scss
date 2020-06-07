@@ -1,4 +1,4 @@
-ul {
+.card {
   background-color: #fff;
   list-style: none;
   border: 1px solid rgb(216, 216, 216);
@@ -7,7 +7,7 @@ ul {
   display: block;
 }
 
-li{
+.text-container{
   float: left;
   p{
     font-size: 0.8em;

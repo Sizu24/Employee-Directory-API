@@ -1,5 +1,8 @@
-.title {
+.grid-container {
   font-family: "Open Sans", sans-serif;
+}
+
+.title {
   font-size: 0.8em;
   text-align: center;
   text-transform: uppercase;
@@ -8,16 +11,38 @@
 @media (min-width: 768px) {
   .title {
     text-align: left;
-    padding: 25px;
+    padding-left: 50px;
   }
 }
 
-img {
+h2 {
+  font-size: 0.5em;
+}
+@media (min-width: 1024px) {
+  h2 {
+    font-size: 1.1em;
+  }
+}
+
+p {
+  font-size: 0.3em;
+}
+@media (min-width: 1024px) {
+  p {
+    font-size: 0.8em;
+  }
+}
+
+main img {
   margin: 20px 0 20px 5px;
   border-radius: 50%;
   height: 100px;
   width: 100px;
   float: left;
+}
+
+.modal img {
+  border-radius: 50%;
 }
 
 * {
@@ -58,7 +83,6 @@ main {
 
 .card {
   background-color: #fff;
-  list-style: none;
   border: 1px solid #d8d8d8;
   border-radius: 5px;
   padding-left: 20px;
@@ -68,16 +92,16 @@ main {
 .text-container {
   float: left;
 }
-.text-container p {
-  font-size: 0.8em;
+
+p {
   padding: 0 25px 5px 20px;
   margin: 0;
   color: #acacac;
 }
-.text-container h2 {
+
+h2 {
   margin: 0;
   padding: 40px 0 5px 20px;
-  font-size: 1.1em;
 }
 
 .overlay {
@@ -91,15 +115,27 @@ main {
 
 .modal {
   width: 400px;
-  height: 800px;
   position: relative;
+  top: 50px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   background-color: #fff;
-  border: 1px solid gray;
+  border: 1px solid #778;
   border-radius: 5px;
-  padding: 10px;
+  padding: 30px;
+}
+.modal h2 {
+  padding: 7px 0;
+  font-size: 1em;
+}
+.modal p {
+  padding: 5px 0;
+}
+
+hr {
+  margin: 25px 0;
+  border: 1px solid #f0f0f0;
 }
 
 .hidden {
@@ -108,9 +144,10 @@ main {
 
 .modal-close {
   position: absolute;
-  float: right;
   padding: 10px;
   cursor: pointer;
+  right: 20px;
+  top: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */

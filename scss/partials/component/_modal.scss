@@ -9,15 +9,26 @@
 
 .modal{
   width: 400px;
-  height: 800px;
   position: relative;
+  top: 50px;
   margin-left:  auto;
   margin-right: auto;
   text-align: center;
   background-color: #fff;
-  border: 1px solid gray;
+  border: 1px solid #778;
   border-radius: 5px;
-  padding: 10px;
+  padding: 30px;
+  h2{
+    padding: 7px 0;
+    font-size: 1em;
+  }
+  p{
+    padding: 5px 0;
+  }
+}
+hr{
+  margin: 25px 0;
+  border: 1px solid rgb(240, 240, 240);
 }
 .hidden{
     display: none;
@@ -25,7 +36,8 @@
 
 .modal-close{
   position: absolute;
-  float: right;
   padding: 10px;
   cursor: pointer;
+  right: 20px;
+  top: 10px;
 }

@@ -1,9 +1,15 @@
 main img{
   margin: 20px 0  20px 5px;
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
   float: left;
+  height: 45px;
+  @include mq($md){
+    height: 90px;
+  }
+  // @include mq($lg){
+  //   height: 100px;
+  //   width: 100px;
+  // }
 }
 .modal img {
   border-radius: 50%;

@@ -20,15 +20,20 @@ header{
 
 }
 main{
-  margin: 0 50px;
+  margin: 0 15px;
   grid-area: main;
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 20px;
   @include mq($md){
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 1.5%;
+  }
+  @include mq($lg){
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 40px;
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 1.5%;
   }
 }
 

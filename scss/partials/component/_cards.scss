@@ -16,5 +16,8 @@ p{
 }
 h2{
   margin: 0;
-  padding: 40px 0 5px 20px;
+  padding: 20px 0 5px 20px;
+  @include mq($md){
+    padding: 40px 0 5px 20px;
+  }
 }

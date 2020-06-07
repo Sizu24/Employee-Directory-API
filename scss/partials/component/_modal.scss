@@ -5,10 +5,11 @@
   right: 0;
   bottom: 0;
   background: rgba(100, 100, 100, 0.4);
+  transition-timing-function: 2s;
 }
 
 .modal{
-  width: 400px;
+  width: 90%;
   position: relative;
   top: 50px;
   margin-left:  auto;
@@ -18,12 +19,16 @@
   border: 1px solid #778;
   border-radius: 5px;
   padding: 30px;
+  @include mq($md){
+    width: 400px;
+  }
   h2{
     padding: 7px 0;
     font-size: 1em;
   }
   p{
     padding: 5px 0;
+    font-size: 0.8em;
   }
 }
 hr{
@@ -32,7 +37,8 @@ hr{
 }
 .hidden{
     display: none;
-  }
+    transition-duration: 1s;
+}
 
 .modal-close{
   position: absolute;

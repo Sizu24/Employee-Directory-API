@@ -6,6 +6,9 @@ main img{
   @include mq($md){
     height: 90px;
   }
+  @include mq($lg){
+    height: 85px;
+  }
   // @include mq($lg){
   //   height: 100px;
   //   width: 100px;

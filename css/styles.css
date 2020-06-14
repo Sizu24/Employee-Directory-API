@@ -522,4 +522,10 @@ hr {
   top: 10px;
 }
 
+input {
+  margin: 10px 160px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
 /*# sourceMappingURL=styles.css.map */

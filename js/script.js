@@ -6,17 +6,21 @@ const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
 const url = `https://randomuser.me/api/?results=12&inc=name, picture,
 email, location, phone, dob &noinfo &nat=US`;
+const searchBar = document.getElementById("search");
 
-fetch(url)
-/*
-  Get api from server, 
-  take results property and copy to response,
-  send data to display funciton
-*/
-.then(response => response.json())
-.then(response => response.results)
-.then(profile => display(profile))
-.catch(error=> console.log('There was an error!', error));
+const getRandomUsers = ()=>{
+  fetch(url)
+  /*
+    Get api from server, 
+    take results property and copy to response,
+    send data to display funciton
+  */
+  .then(response => response.json())
+  .then(response => response.results)
+  .then(profile => display(profile))
+  .catch(error=> console.log('There was an error!', error));
+
+}
 
 function display(employeeData){
   // copy data to employees array
@@ -56,22 +60,22 @@ function displayModal (index){
   // Data object for dob
   let date = new Date(dob.date);
 
-const modalHTML = `
-<img class="avatar" src="${picture.large}" alt="profile pic">
-<div class="modal-text">
-  <h2 class="name">${name.first} ${name.last}</h2>
-  <p class="email">${email}</p>
-  <p class="address">${city}</p>
-  <hr />
-  <p>${phone}</p>
-  <p class="address">${street.number} ${street.name} ${city}, ${state} ${postcode}</p>
-  <p>Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
-</div>
-`;
+  const modalHTML = `
+  <img class="avatar" src="${picture.large}" alt="profile pic">
+  <div class="modal-text">
+    <h2 class="name">${name.first} ${name.last}</h2>
+    <p class="email">${email}</p>
+    <p class="address">${city}</p>
+    <hr />
+    <p>${phone}</p>
+    <p class="address">${street.number} ${street.name} ${city}, ${state} ${postcode}</p>
+    <p>Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
+  </div>
+  `;
 
-// remove hidden class to display overlay of modal, and add modal HTML data
-overlay.classList.remove("hidden");
-modalContainer.innerHTML = modalHTML;
+  // remove hidden class to display overlay of modal, and add modal HTML data
+  overlay.classList.remove("hidden");
+  modalContainer.innerHTML = modalHTML;
 }
 
 listContainer.addEventListener("click", e =>{
@@ -89,4 +93,24 @@ modalClose.addEventListener("click", () =>{
   overlay.classList.add("hidden");
 });
 
+let people = [];
+let answers = [];
 
+const searchUser = ()=>{
+  let index = [];
+  let userInput = searchBar.value.toLowerCase();
+  for(let i = 0; i < employees.length; i++){
+    index = employees[i].name.first + " " + employees[i].name.last;
+    if(people.indexOf(index) === -1){
+      people.push(index);
+    }
+  }
+  if(userInput !== ""){
+    answers = people.filter(name => name.toLowerCase().indexOf(userInput) !== -1);
+  }else{
+    answers = [];
+  }
+  console.log(answers);
+}
+
+getRandomUsers();

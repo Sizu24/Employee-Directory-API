@@ -1,6 +1,11 @@
 // Global Variables 
 const listContainer = document.querySelector(".card-container");
-let employees = [];
+let employees;
+let profileList;
+let profilePeople = [];
+let peopleData;
+let data = [];
+let filteredNames = [];
 const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
@@ -8,36 +13,51 @@ const url = `https://randomuser.me/api/?results=12&inc=name, picture,
 email, location, phone, dob &noinfo &nat=US`;
 const searchBar = document.getElementById("search");
 
-const getRandomUsers = ()=>{
-  fetch(url)
-  /*
-    Get api from server, 
-    take results property and copy to response,
-    send data to display funciton
-  */
-  .then(response => response.json())
-  .then(response => response.results)
-  .then(profile => display(profile))
-  .catch(error=> console.log('There was an error!', error));
 
+const getData = async () => {
+  const response = await fetch(url);
+  data = await response.json();
+  employees = await data.results;
+  display(data);
 }
 
-function display(employeeData){
-  // copy data to employees array
-  employees = employeeData;
-  // console.log(employees);
+getData();
 
+searchBar.addEventListener("keyup", () => {
+
+  let userInput = searchBar.value.toLowerCase();
+  for(let i = 0; i < data.results.length; i++){
+    if(data.results[i].name.first.toLowerCase().indexOf(userInput) !== -1
+      || data.results[i].name.last.toLowerCase().indexOf(userInput) !== -1){
+      console.log(data.results[i].name);
+    }
+  }
+
+});
+
+
+
+
+/*
+  Get api from server, 
+  take results property and copy to response,
+  send data to display funciton
+*/
+// .then(data => display(employees))
+
+function display(data){ 
+  // copy data to employees array
   // assign data
   let employeeHTML = "";
-  employees.forEach((employee, index) =>{
-    let name = employee.name;
-    let email = employee.email;
-    let city = employee.location.city;
-    let picture = employee.picture;
+  for(let i = 0; i < employees.length; i ++){
+    let name = employees[i].name;
+    let email = employees[i].email;
+    let city = employees[i].location.city;
+    let picture = employees[i].picture;
 
     // setup HTML code and store it in variable
     employeeHTML += `
-    <div class="card" data-index="${index}">
+    <div class="card" data-index="${i}">
     <img class="avatar" src="${picture.large}" alt="profile pic">
     <div class="text-container">
       <h2 class="name">${name.first} ${name.last}</h2>
@@ -47,7 +67,7 @@ function display(employeeData){
   </div>
     `;
 
-  });
+  };
   // add HTML code to card container in HTML
   listContainer.innerHTML = employeeHTML;
 }
@@ -96,21 +116,5 @@ modalClose.addEventListener("click", () =>{
 let people = [];
 let answers = [];
 
-const searchUser = ()=>{
-  let index = [];
-  let userInput = searchBar.value.toLowerCase();
-  for(let i = 0; i < employees.length; i++){
-    index = employees[i].name.first + " " + employees[i].name.last;
-    if(people.indexOf(index) === -1){
-      people.push(index);
-    }
-  }
-  if(userInput !== ""){
-    answers = people.filter(name => name.toLowerCase().indexOf(userInput) !== -1);
-  }else{
-    answers = [];
-  }
-  console.log(answers);
-}
 
-getRandomUsers();
+  

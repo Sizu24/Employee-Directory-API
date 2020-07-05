@@ -1,11 +1,10 @@
 // Global Variables 
 const listContainer = document.querySelector(".card-container");
 let employees;
-let profileList;
-let profilePeople = [];
-let peopleData;
 let data = [];
 let filteredNames = [];
+let people =[];
+
 const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
@@ -23,27 +22,26 @@ const getData = async () => {
 
 getData();
 
+
+
 searchBar.addEventListener("keyup", () => {
 
+  let personName = document.querySelectorAll(".name");
+  let card = document.querySelectorAll(".card");
   let userInput = searchBar.value.toLowerCase();
   for(let i = 0; i < data.results.length; i++){
-    if(data.results[i].name.first.toLowerCase().indexOf(userInput) !== -1
-      || data.results[i].name.last.toLowerCase().indexOf(userInput) !== -1){
-      console.log(data.results[i].name);
+    if(searchBar !== ""){
+      if(personName[i].textContent.toLowerCase().indexOf(userInput) === -1){
+        console.log(personName[i].textContent); 
+        card[i].style.display = "none";
+      }else{
+        card[i].style.display = "";
+      }
     }
+    
   }
 
 });
-
-
-
-
-/*
-  Get api from server, 
-  take results property and copy to response,
-  send data to display funciton
-*/
-// .then(data => display(employees))
 
 function display(data){ 
   // copy data to employees array
@@ -112,9 +110,6 @@ listContainer.addEventListener("click", e =>{
 modalClose.addEventListener("click", () =>{
   overlay.classList.add("hidden");
 });
-
-let people = [];
-let answers = [];
 
 
   

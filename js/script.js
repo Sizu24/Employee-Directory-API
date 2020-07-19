@@ -11,7 +11,6 @@ email, location, phone, dob &noinfo &nat=US`;
 const searchBar = document.getElementById("search");
 let employees;
 let data = [];
-let dataArray = [];
 let employeeHTML = "";
 
 // function to get data from server
@@ -75,7 +74,7 @@ function display(data){
     </div>
   </div>
     `;
-  };
+  }
   // add HTML code to card container in HTML
   listContainer.innerHTML = employeeHTML;
 }
